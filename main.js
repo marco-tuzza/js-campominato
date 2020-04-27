@@ -17,7 +17,7 @@ alert('Benvenuto! Premi ok per giocare')
 
 var mine = []
 var bandiere = []
-var punteggio = 1
+var punteggio = 0
 
 
 for (var i = 0; i < 16; i++) {
@@ -33,21 +33,25 @@ for (var i = 0; i < 84; i++) {
 
     if (verifica1 == true) {
         alert('Il carattere inserito non è un carattere numerico, riprova')
-        var punteggio = punteggio + 0
-    }
-    else if (verifica2 == true) {
+        var punteggio = punteggio;
+
+    } else if (verifica2 == true) {
         console.log(mine)
         alert('Ops, hai trovato una mina! Hai perso');
         i = 85;
         alert('Il tuo punteggio è ' + punteggio)
+        var punteggio = punteggio;
+
     } else if (verifica3 == true) {
         alert('Hai già inserito questo numero, riprova');
         i = (i-1);
-        var punteggio = punteggio + 0
-    } else
+        var punteggio = punteggio;
+
+    } else {
         alert('Continua così');
-        console.log(numeroUtente);
+        console.log('Hai inserito il numero ' + numeroUtente);
         bandiere.push(numeroUtente);
-        console.log(punteggio);
         var punteggio = punteggio + 1
+        console.log('Il tuo punteggio è ' + punteggio);
+    }
 }
